@@ -6,6 +6,6 @@ TO BUILD:
 cd angular-app
 npm run build
 
-this will build to the /resources/ directory in the neutralino project
+this will build angular to the /resources/ directory in the neutralino project
 
-`neu run` to start it, after it is build
+then cd back to the neutralino folder, and `neu run`
