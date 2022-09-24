@@ -10,6 +10,8 @@ Getting Started
 ===============
 you'll need neutralino and angular installed ..
 
+`cd neutralino` (if youre not already there)
+
 `npm i && cd angular-app && npm i && cd ..`
 
 You can run this angular app in a browser via the usual methods `cd angular-app && npm run start`, though you obviously won't have access to the neutralino api.
