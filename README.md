@@ -35,4 +35,6 @@ Things to Know
 there is a main.js in `assets/neutralino/js/main.js` which sets up some default parameters and functionality.
 it also places the main Neutralino api object onto the `window` object
 
-I created a `NeutralinoService` which acts as the passthrough between the angular application and the Neutralino api living on the window object.
+I created a `NeutralinoService` which acts as the passthrough between the angular application and the Neutralino api living on the window object. 
+
+There is an example usage in app.component.ts
