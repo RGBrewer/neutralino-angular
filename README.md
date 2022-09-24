@@ -14,7 +14,7 @@ you'll need angular installed ..
 
 then `cd ..` to return to the `neutralino` folder.
 
-You can run this angular app in a browser via the usual methods `npm run start`, though you obviously won't have access to the neutralino api.
+You can run this angular app in a browser via the usual methods `cd angular-app && npm run start`, though you obviously won't have access to the neutralino api.
 
 Building The App
 ================
