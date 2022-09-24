@@ -1,9 +1,11 @@
+class NeutralinoApp {
 
+  // Inject the Neutralino instance
+  constructor(neutralino) {
+    this.neutralino = neutralino;
+  }
 
-Neutralino.init();
-
-myApp = {
-  setTray: () => {
+  setTray = () => {
     if(NL_MODE != "window") {
       console.log("INFO: Tray menu is only available in the window mode.");
       return;
@@ -16,23 +18,32 @@ myApp = {
         {id: "QUIT", text: "Quit"}
       ]
     };
-    Neutralino.os.setTray(tray);
-  },
-  onTrayMenuItemClicked: (event) => {
+    this.neutralino.os.setTray(tray);
+  }
+
+  onTrayMenuItemClicked = (event) => {
+    console.log(event.detail.id)
     switch(event.detail.id) {
       case "VERSION":
-        Neutralino.os.showMessageBox("Version information",
+        this.neutralino.os.showMessageBox("Version information",
           `Neutralinojs server: v${NL_VERSION} | Neutralinojs client: v${NL_CVERSION}`);
         break;
       case "QUIT":
-        Neutralino.app.exit();
+        this.onWindowClose();
         break;
     }
-  },
-  onWindowClose: () => {
-    Neutralino.app.exit();
+  }
+
+  onWindowClose = () => {
+    console.log('foop')
+    this.neutralino.app.exit()
+    // Neutralino.app.exit();
   }
 };
+
+Neutralino.init();
+const myApp = new NeutralinoApp(Neutralino)
+
 
 console.log(`${NL_APPID} is running on port ${NL_PORT}  inside ${NL_OS} server: v${NL_VERSION} . client: v${NL_CVERSION}`)
 
@@ -43,6 +54,6 @@ Neutralino.events.on("trayMenuItemClicked", myApp.onTrayMenuItemClicked);
 Neutralino.events.on("windowClose", myApp.onWindowClose);
 Neutralino.events.on("ready", () => {
   if(NL_OS != "Darwin") { // TODO: Fix https://github.com/neutralinojs/neutralinojs/issues/615
-    window.myApp.setTray();
+    myApp.setTray()
   }
 })
