@@ -101,7 +101,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/neutralino/js/neutralino.js"
+              "src/assets/neutralino/js/neutralino.js",
+              "src/assets/neutralino/js/main.js"
             ]
           }
         }
