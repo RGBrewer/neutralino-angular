@@ -1,4 +1,7 @@
+// Attach the Neutralino API reference to the window
+window.neutralino = Neutralino
 
+// Set up the tray, mostly ...
 class NeutralinoApp {
   // Inject the Neutralino instance
   constructor(neutralino) {
@@ -33,18 +36,14 @@ class NeutralinoApp {
         break;
     }
   }
-
   onWindowClose = () => {
     this.neutralino.app.exit()
   }
-
 };
 
 const myApp = new NeutralinoApp(Neutralino)
-window.neutralino = Neutralino
 
-console.log(`${NL_APPID} is running on port ${NL_PORT}  inside ${NL_OS} server: v${NL_VERSION} . client: v${NL_CVERSION}`)
-
+// Some default interactions
 Neutralino.events.on("trayMenuItemClicked", myApp.onTrayMenuItemClicked);
 Neutralino.events.on("windowClose", myApp.onWindowClose);
 Neutralino.events.on("ready", () => {
@@ -52,3 +51,5 @@ Neutralino.events.on("ready", () => {
     myApp.setTray()
   }
 })
+
+console.log(`${NL_APPID} is running on port ${NL_PORT}  inside ${NL_OS} server: v${NL_VERSION} . client: v${NL_CVERSION}`)
