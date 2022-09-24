@@ -4,15 +4,11 @@ import { Injectable } from '@angular/core';
 export class NeutralinoService {
 
   // The Neutralino api is attached to the window via main.js
-  private get neutralino() : any {
+  public get api() : any {
     return window.neutralino;
   }
 
-  public close() {
-    this.neutralino.app.exit()
-  }
-
   public maximize() {
-    this.neutralino.window.maximize()
+    this.api.window.maximize()
   }
 }
