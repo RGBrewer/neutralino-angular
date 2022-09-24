@@ -37,6 +37,7 @@ class NeutralinoApp {
   onWindowClose = () => {
     this.neutralino.app.exit()
   }
+
 };
 
 const myApp = new NeutralinoApp(Neutralino)

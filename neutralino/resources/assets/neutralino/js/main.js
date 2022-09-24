@@ -1,5 +1,5 @@
-class NeutralinoApp {
 
+class NeutralinoApp {
   // Inject the Neutralino instance
   constructor(neutralino) {
     this.neutralino = neutralino;
@@ -41,7 +41,7 @@ class NeutralinoApp {
 };
 
 const myApp = new NeutralinoApp(Neutralino)
-window.myApp = myApp
+window.neutralino = Neutralino
 
 console.log(`${NL_APPID} is running on port ${NL_PORT}  inside ${NL_OS} server: v${NL_VERSION} . client: v${NL_CVERSION}`)
 

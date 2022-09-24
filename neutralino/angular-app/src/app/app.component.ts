@@ -6,7 +6,13 @@ import { NeutralinoService } from './services/neutralino.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular-app';
-  constructor(private neutralinoService: NeutralinoService) {}
+
+  constructor(
+    private neutralinoService: NeutralinoService) {
+  }
+  ngOnInit() {
+    this.neutralinoService.maximize()
+  }
 }
