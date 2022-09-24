@@ -11,7 +11,7 @@ class NeutralinoApp {
       return;
     }
     let tray = {
-      icon: "/resources/icons/trayIcon.png",
+      icon: "/resources/assets/neutralino/icons/trayIcon.png",
       menuItems: [
         {id: "VERSION", text: "Get version"},
         {id: "SEP", text: "-"},
@@ -22,7 +22,6 @@ class NeutralinoApp {
   }
 
   onTrayMenuItemClicked = (event) => {
-    console.log(event.detail.id)
     switch(event.detail.id) {
       case "VERSION":
         this.neutralino.os.showMessageBox("Version information",

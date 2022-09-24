@@ -11,7 +11,7 @@ class NeutralinoApp {
       return;
     }
     let tray = {
-      icon: "/resources/icons/trayIcon.png",
+      icon: "/resources/assets/neutralino/icons/trayIcon.png",
       menuItems: [
         {id: "VERSION", text: "Get version"},
         {id: "SEP", text: "-"},
@@ -22,7 +22,6 @@ class NeutralinoApp {
   }
 
   onTrayMenuItemClicked = (event) => {
-    console.log(event.detail.id)
     switch(event.detail.id) {
       case "VERSION":
         this.neutralino.os.showMessageBox("Version information",
@@ -35,21 +34,14 @@ class NeutralinoApp {
   }
 
   onWindowClose = () => {
-    console.log('foop')
     this.neutralino.app.exit()
-    // Neutralino.app.exit();
   }
 };
 
 Neutralino.init();
 const myApp = new NeutralinoApp(Neutralino)
 
-
 console.log(`${NL_APPID} is running on port ${NL_PORT}  inside ${NL_OS} server: v${NL_VERSION} . client: v${NL_CVERSION}`)
-
-// Neutralino.events.on("trayMenuItemClicked", onTrayMenuItemClicked);
-// Neutralino.events.on("windowClose", onWindowClose);
-
 Neutralino.events.on("trayMenuItemClicked", myApp.onTrayMenuItemClicked);
 Neutralino.events.on("windowClose", myApp.onWindowClose);
 Neutralino.events.on("ready", () => {
