@@ -3,6 +3,7 @@ class NeutralinoApp {
   // Inject the Neutralino instance
   constructor(neutralino) {
     this.neutralino = neutralino;
+    this.neutralino.init();
   }
 
   setTray = () => {
@@ -36,12 +37,14 @@ class NeutralinoApp {
   onWindowClose = () => {
     this.neutralino.app.exit()
   }
+
 };
 
-Neutralino.init();
 const myApp = new NeutralinoApp(Neutralino)
+window.myApp = myApp
 
 console.log(`${NL_APPID} is running on port ${NL_PORT}  inside ${NL_OS} server: v${NL_VERSION} . client: v${NL_CVERSION}`)
+
 Neutralino.events.on("trayMenuItemClicked", myApp.onTrayMenuItemClicked);
 Neutralino.events.on("windowClose", myApp.onWindowClose);
 Neutralino.events.on("ready", () => {

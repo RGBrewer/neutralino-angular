@@ -4,6 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { NeutralinoService } from './services/neutralino.service'
+
+declare global {
+  interface Window {
+    neutralino?: any;
+  }
+}
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +20,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [NeutralinoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
