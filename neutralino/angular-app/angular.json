@@ -30,7 +30,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/neutralino/js/neutralino.js"
+            ]
           },
           "configurations": {
             "production": {
