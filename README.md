@@ -8,11 +8,10 @@ inside that folder is the `angular-app` folder, which contains the angular app.
 
 Getting Started
 ===============
-you'll need neutralino and angular installed ..
+you'll need neutralino installed (https://neutralino.js.org/)
 
-`cd neutralino` (if youre not already there)
-
-`npm i && cd angular-app && npm i && cd ..`
+and then angular installed ..
+`cd neutralino && npm i && cd angular-app && npm i && cd ..`
 
 You can run this angular app in a browser via the usual methods `cd angular-app && npm run start`, though you obviously won't have access to the neutralino api.
 
